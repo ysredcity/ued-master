@@ -9,7 +9,7 @@
 | 版本号 | `SKILL.md` 的 `metadata.version` |
 | 维护上下文（状态、结论、待办） | `PROJECT_CONTEXT.md` |
 | 面向使用者的变化 | `CHANGELOG.md` |
-| 测试用例 | `tests/cases.json` |
+| 测试用例 | `tests/cases.json`（本地维护，不入库） |
 
 ## 二、少规则原则
 
@@ -43,5 +43,6 @@ UEDMaster 面向没有设计系统的阶段。新增规则前先问：这条规�
 
 ## 六、入库边界与协作
 
-- 不入库：`tests/cases/`、`tests/outputs/`（样本可能含业务数据）、`releases/`、`.ued-master/`（运行时截图等临时文件）。
+- 不入库：`PROJECT_CONTEXT.md`（维护台账）、`tests/`（check.sh、cases.json、用例材料与产出都在本地维护，样本可能含业务数据）、`releases/`、`.ued-master/`（运行时截图等临时文件）。
+- `tests/check.sh` 与 `tests/cases.json` 虽不入库，仍是本地维护的事实源，改动 skill 后照常按本文件约定执行检查与用例，不因不入库而降低要求。
 - 不替用户 `git commit` / `git push`。

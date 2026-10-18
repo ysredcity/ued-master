@@ -35,8 +35,7 @@ skills/ued-master/        skill 本体（随包分发）
   UPSTREAM.md             上游来源、版本与正文哈希
   LICENSE-upstream.txt    上游 MIT 许可
   references/brand-color.md  品牌色取值理由
-tests/                    check.sh 一致性检查 + cases.json 用例清单
-  cases/ · outputs/       用例材料与产出（不入库）
+tests/                    一致性检查、用例清单、用例材料与产出（本地专用，不入库）
 scripts/                  pack.sh 打包 · upstream-diff.sh 对比上游
 docs/plans/               设计记录
 releases/                 本地 ZIP（不入库）

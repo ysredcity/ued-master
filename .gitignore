@@ -1,6 +1,6 @@
-# 用例材料与产出（可能含业务数据，不入库）；tests/ 下的脚本与清单照常入库
-/tests/cases/
-/tests/outputs/
+# 维护台账与全部测试材料／脚本／产出（本地专用，不入库）
+/PROJECT_CONTEXT.md
+/tests/
 # skill 运行时临时文件（截图等）
 .ued-master/
 # 本地版本 ZIP
