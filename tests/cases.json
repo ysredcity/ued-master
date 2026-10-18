@@ -1,0 +1,47 @@
+{
+  "_note": "UEDMaster 测试用例清单（入库）。输入材料在 tests/cases/、产出在 tests/outputs/（均不入库）。评测方式见 tests/README.md。",
+  "prompt_common": "这是之前用别的 agent 生成的产品 demo 原型，UI 效果比较差。以 Awwwards、Webby Awards、FWA 获奖级网站为品质标准，从排版、留白、视觉层级、色彩、动效、微交互、响应式和原创性上进行自检并持续优化，直到没有明显可提升之处。",
+  "expectations_common": [
+    "原文件只读，产出新文件；业务数据、文案与已有交互全部保留",
+    "保留原有明暗主题；深色主题下强调色已提亮派生，文字对比度 ≥4.5:1",
+    "强调色收敛为 #009689 / #00786F 及其派生色，未出现紫蓝 AI 渐变",
+    "强调色克制：首屏青绿出现位置通常不超过 5–8 处；多类别并列时仍用不同色相，页面不是单一青绿色",
+    "中性色不偏青，整体冷暖平衡",
+    "过程中至少有一轮浏览器截图自检，覆盖桌面与窄屏宽度及主要弹层状态",
+    "页面无脚本报错，零外部依赖，主要宽度下无页面级横向溢出"
+  ],
+  "cases": [
+    {
+      "id": "tc1-crm-lead",
+      "mode": "optimize",
+      "input": "tests/cases/tc1-crm-lead/CRM线索管理V1.html",
+      "prompt": "$prompt_common",
+      "expectations": [
+        "$expectations_common",
+        "表格在 1440 宽下常用列可读，不出现逐字折行"
+      ]
+    },
+    {
+      "id": "tc2-zhaopin",
+      "mode": "optimize",
+      "input": "tests/cases/tc2-zhaopin/智能招聘助手V1.html",
+      "prompt": "$prompt_common",
+      "note": "约 1MB 的单文件打包：外层 iframe 加载 15 个页面，页面与共享样式 CSS_BUNDLE 以 JS 字符串内嵌。考察大型多页原型的处理方式。",
+      "expectations": [
+        "$expectations_common",
+        "仍是可双击打开的单文件，15 个页面都能进入且页面间跳转正常",
+        "多页面视觉一致，优先通过共享样式统一修改"
+      ]
+    },
+    {
+      "id": "tc3-test-report",
+      "mode": "optimize",
+      "input": "tests/cases/tc3-test-report/测试日报看板V1.html",
+      "prompt": "$prompt_common",
+      "expectations": [
+        "$expectations_common",
+        "日报正文与数据表内容逐字保留"
+      ]
+    }
+  ]
+}
