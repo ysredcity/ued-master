@@ -17,7 +17,7 @@ rsync -a --exclude '.DS_Store' "$SK/" "$TMP/ued-master/"
 ( cd "$TMP" && zip -qr -X "$OUT" ued-master )
 
 unzip -tq "$OUT" >/dev/null
-for f in SKILL.md UPSTREAM.md LICENSE-upstream.txt references/brand-color.md; do
+for f in SKILL.md UPSTREAM.md LICENSE-upstream.txt references/brand-color.md references/web-baseline.md; do
   unzip -l "$OUT" "ued-master/$f" >/dev/null || { echo "包内缺少 $f" >&2; rm -f "$OUT"; exit 1; }
 done
 echo "已生成 ${OUT}（$(unzip -l "$OUT" | tail -1 | awk '{print $2}') 个文件，$(wc -c < "$OUT" | tr -d ' ') 字节）"
